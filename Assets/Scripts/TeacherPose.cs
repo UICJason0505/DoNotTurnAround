@@ -15,7 +15,6 @@ public class TeacherPose : MonoBehaviour, Pose
         if (squeakMarker != null) squeakMarker.SetActive(pose == PoseType.Turning);
     }
     void OnEnable() => SetPose(pose);
-    // Unity warns when sprites change inside OnValidate, so Inspector edits are applied right after validation.
     void OnValidate()
     {
 #if UNITY_EDITOR

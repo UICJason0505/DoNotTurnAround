@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-
 public class ProgressBar : MonoBehaviour, Progress
 {
     [SerializeField, Range(0f, 100f)] float progress;
@@ -10,23 +9,18 @@ public class ProgressBar : MonoBehaviour, Progress
     [SerializeField] Color belowPassColor = new Color(0.86f, 0.27f, 0.23f);
     [SerializeField] Color passedColor = new Color(0.30f, 0.69f, 0.31f);
     [SerializeField] Text label;
-
     public float CurrentProgress => progress;
-
     public void SetProgress(float percent)
     {
         progress = Mathf.Clamp(percent, 0f, 100f);
         Apply();
     }
-
     void OnValidate() => Apply();
-
     void Apply()
     {
         float filledCells = progress / 100f * cells.Length;
         for (int i = 0; i < cells.Length; i++)
             if (cells[i] != null) cells[i].fillAmount = Mathf.Clamp01(filledCells - i);
-
         if (passMarker != null)
         {
             if (progress >= passPercent)
@@ -37,12 +31,9 @@ public class ProgressBar : MonoBehaviour, Progress
         }
         if (label != null) label.text = Mathf.FloorToInt(progress) + "%";
     }
-
-    // Cell i is centred at first + i * pitch, so the boundary after k cells sits at first + (k - 0.5) * pitch.
     void PlacePassMarker()
     {
         if (cells.Length < 2 || cells[0] == null || cells[1] == null) return;
-
         float first = cells[0].rectTransform.anchoredPosition.x;
         float pitch = cells[1].rectTransform.anchoredPosition.x - first;
         float passCells = passPercent / 100f * cells.Length;
