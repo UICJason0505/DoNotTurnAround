@@ -1,0 +1,11 @@
+Don't Turn Around! - Classroom Art Kit (v1)
+
+All sprites in png/ and the previews in preview/ were generated procedurally by Claude
+(an AI model by Anthropic) for this project, using ClassroomSceneBuilder.cs.
+You may use, modify and redistribute them freely. No attribution is required.
+
+The CHIPS and SQUEAK! labels baked into chips_open.png, chips_closed.png and
+squeak_marker.png were rendered with the Arial font.
+
+If your course has rules about AI-made assets, check them and mention this file
+in your credits.

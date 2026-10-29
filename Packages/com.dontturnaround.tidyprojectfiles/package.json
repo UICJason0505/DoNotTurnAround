@@ -1,0 +1,7 @@
+{
+  "name": "com.dontturnaround.tidyprojectfiles",
+  "version": "1.0.0",
+  "displayName": "Tidy Project Files",
+  "description": "Keeps only the Assembly-CSharp projects in the generated Visual Studio solution and deletes the package .csproj files Unity writes into the project root.",
+  "unity": "6000.3"
+}
